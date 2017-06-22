@@ -1,0 +1,47 @@
+
+
+      <div id="mainnav" class="hidden-phone hidden-tablet">
+        <ul>
+          <li class="active">
+            <span class="current-arrow"></span>
+            <a th:href="@{/dashboard}">
+              <div class="icon">
+                <span class="fs1" aria-hidden="true" data-icon="&#xe0a1;"></span>
+              </div>
+              <p th:text="#{dashboard}">Dashboard</p>
+            </a>
+          </li>
+          <li>
+            <a th:href="@{/user-list}">
+              <div class="icon">
+                <span class="fs1" aria-hidden="true" data-icon="&#xe14a;"></span">
+              </div>
+              <p th:text="#{userlist}">User-List</p>
+            </a>
+          </li>
+          <li>
+            <a th:href="@{/user-cu}">
+              <div class="glyphicon">
+                <span class="fs1" aria-hidden="true" data-icon="&#xe023;"></span> 
+              </div>
+              <p  th:text="#{usercu}">User-CU</p>
+            </a>
+          </li>
+          <li>
+            <a th:href="@{/role-list}">
+              <div class="icon">
+                <span class="fs1" aria-hidden="true" data-icon="&#xe025;"></span>
+              </div>
+              <p  th:text="#{rolelist}">Role-List</p>
+            </a>
+          </li>
+          <li>
+            <a th:href="@{/role-cu}">
+              <div class="icon">
+               <span class="fs1" aria-hidden="true" data-icon="&#xe023;"></span> 
+              </div>
+              <p  th:text="#{rolecu}">Role-CU</p>
+            </a>
+          </li>
+		</ul>
+  </div>

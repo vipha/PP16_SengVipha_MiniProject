@@ -1,0 +1,46 @@
+
+
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.utraq.net.nz/thymeleaf/layout">
+<head>
+
+    <meta charset="utf-8"/>
+    <meta name="author" content="Srinu Basava">
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
+    <meta name="description" content="Moon Light Admin Admin UI">
+    <meta name="keywords" content="Moon Light Admin, Admin UI, Admin Dashboard, Srinu Basava">
+    <script th:src="@{/resources/front/js/html5-trunk.js}"></script>
+
+<title layout:title-pattern="$CONTENT_TITLE - $DECORATOR_TITLE">Khmer Academy</title>
+
+<style th:replace="/shared/style"></style>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40571798-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+</head>
+<body >
+
+<div th:replace="/shared/header"> </div>
+
+<div th:replace="/shared/leftSideBar"> </div>
+
+<div layout:fragment="content" class="page-content"> </div>
+
+<div th:replace="/shared/footer"></div>
+
+<script th:replace="/shared/script"></script>
+</body>
+</html>
