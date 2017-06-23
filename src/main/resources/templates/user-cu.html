@@ -58,47 +58,51 @@ xmlns:th="http://www.thymeleaf.org"
                   </div>
                 </div>
                 <div class="widget-body">
-                  <form class="form-horizontal no-margin well">
+                  <form class="form-horizontal no-margin well" th:action="${addStatus==true?'/user/save':'/user/update'}" th:object="${user}" Method="POST">
+                    <input type="hidden" th:field="*{user_hash}">
                     <h5 class="text-info">Personal Information</h5>
                     <hr>
                     <div class="control-group">
                       <label class="control-label">
-                        User Name
+                        UserName
                       </label>
                       <div class="controls">
-                        <a href="#" id="userName" data-type="text" data-pk="1" data-original-title="Click here to edit your name" class="inputText editable editable-click">
-                          Srinu Baswa
-                        </a>
+                        <input type="text" th:field="*{username}"/>
                       </div>
                     </div>
                     <div class="control-group">
                       <label class="control-label">
-                        Email ID
+                        Email
                       </label>
                       <div class="controls">
-                        <a href="#" data-type="email" data-pk="1" data-original-title="Click here to edit your email" class="inputText editable editable-click">
-                          you@yourmailID.com
-                        </a>
+                        <input type="text" th:field="*{email}"/>
                       </div>
                     </div>
                     <div class="control-group">
                       <label class="control-label">
-                        Password
+                        Gender
                       </label>
                       <div class="controls">
-                        <a href="#" id="password" data-type="password" data-pk="1" data-original-title="Click here to edit your password" class="inputText editable editable-click">
-                          ******
-                        </a>
+                        <select th:field="*{gender}">
+                        	<option value="Male">Male</option>
+                        	<option value="Female">Female</option>
+                        </select>
                       </div>
                     </div>
                     <div class="control-group">
                       <label class="control-label">
-                        Confirm Password
+                        Phone Number
                       </label>
                       <div class="controls">
-                        <a href="#" id="confirmPassword" data-type="password" data-pk="1" data-original-title="Click here to confirm your password" class="inputText editable editable-click">
-                          ******
-                        </a>
+                        <input type="text" th:field="*{phonenumber}"/>
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label">
+                        Created Date
+                      </label>
+                      <div class="controls">
+                        <input type="datetime-local" th:field="*{created_date}"/>
                       </div>
                     </div>
                     <div class="form-actions no-margin">
