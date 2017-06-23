@@ -54,17 +54,18 @@ xmlns:th="http://www.thymeleaf.org"
               <div class="widget">
                 <div class="widget-header">
                   <div class="title">
-                    <span class="fs1" aria-hidden="true" data-icon=""></span> Editable Inputs
+                    <span class="fs1" aria-hidden="true" data-icon="" th:text="#{input}">Inputs</span>
                   </div>
                 </div>
                 <div class="widget-body">
                   <form class="form-horizontal no-margin well" th:action="${addStatus==true?'/user/save':'/user/update'}" th:object="${user}" Method="POST">
                     <input type="hidden" th:field="*{user_hash}">
-                    <h5 class="text-info">Personal Information</h5>
+                    <h5 class="text-info" th:text="#{personalinformation}">Personal Information</h5>
                     <hr>
                     <div class="control-group">
-                      <label class="control-label">
-                        UserName
+                       <label class="control-label">
+                 			<span th:text="#{username}">UserName</span>
+                        
                       </label>
                       <div class="controls">
                         <input type="text" th:field="*{username}"/>
@@ -72,15 +73,16 @@ xmlns:th="http://www.thymeleaf.org"
                     </div>
                     <div class="control-group">
                       <label class="control-label">
-                        Email
+                 		<span th:text="#{email}">Email</span>
+                        
                       </label>
-                      <div class="controls">
+                    <div class="controls">
                         <input type="text" th:field="*{email}"/>
-                      </div>
+                      </div> 
                     </div>
                     <div class="control-group">
                       <label class="control-label">
-                        Gender
+                       <span th:text="#{gender}">Gender</span>
                       </label>
                       <div class="controls">
                         <select th:field="*{gender}">
@@ -91,7 +93,7 @@ xmlns:th="http://www.thymeleaf.org"
                     </div>
                     <div class="control-group">
                       <label class="control-label">
-                        Phone Number
+                        <span th:text="#{phonenumber}">Phone Number</span>
                       </label>
                       <div class="controls">
                         <input type="text" th:field="*{phonenumber}"/>
@@ -99,7 +101,7 @@ xmlns:th="http://www.thymeleaf.org"
                     </div>
                     <div class="control-group">
                       <label class="control-label">
-                        Created Date
+                        <span th:text="#{createdate}">Created Date</span>
                       </label>
                       <div class="controls">
                         <input type="datetime-local" th:field="*{created_date}"/>
@@ -107,10 +109,10 @@ xmlns:th="http://www.thymeleaf.org"
                     </div>
                     <div class="form-actions no-margin">
                       <button type="submit" class="btn btn-info">
-                        Save
+                        <span th:text="#{save}">Save</span>
                       </button>
                       <button type="button" class="btn">
-                        Cancel
+                        <span th:text="#{cancel}">Cancel</span>
                       </button>
                     </div>
                   </form>
