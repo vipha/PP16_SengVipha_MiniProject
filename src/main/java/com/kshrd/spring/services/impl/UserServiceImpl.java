@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kshrd.spring.model.Dashboard;
 import com.kshrd.spring.model.User;
 import com.kshrd.spring.repository.UserRepository;
 import com.kshrd.spring.services.UserService;
@@ -67,6 +68,16 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User findOne(String user_hash) {
 		return userRepository.fineOne(user_hash);
+	}
+
+	@Override
+	public List<Dashboard> countGender() {
+		return userRepository.countGender();
+	}
+
+	@Override
+	public int findMale() {
+		return userRepository.findMale();
 	}
 
 }

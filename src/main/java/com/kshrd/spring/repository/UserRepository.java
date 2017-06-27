@@ -12,10 +12,28 @@ import org.apache.ibatis.annotations.SelectKey;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
+import com.kshrd.spring.model.Dashboard;
 import com.kshrd.spring.model.User;
 
 @Repository
 public interface UserRepository {
+	
+	@Select("select "
+			+"COUNT(*) as total, "
+			+"COUNT(case when users.gender='Male' then 1 end) as male, "
+			+"COUNT(case when users.gender='Female' then 1 end) as female "
+			+"from users" )
+	@Results(value={
+			@Result(property="total" , column="total"),
+			@Result(property="male" , column="male"),
+			@Result(property="female" , column="female"),
+	})
+	public List<Dashboard> countGender();
+	
+	@Select("SELECT count(id)"
+			+ " FROM "
+			+ "	users WHERE status='true' and gender='Male'")
+	public int findMale();
 
 	@Select("SELECT "
 			+ "	id, "

@@ -25,6 +25,15 @@ public class UserController {
 		this.userservice=userservice;
 	}
 	
+	@RequestMapping("dashboard")
+	public String dashboard(ModelMap model){
+		model.addAttribute("DASHBOARD", userservice.countGender());
+		model.addAttribute("total", userservice.findAll().size());
+		model.addAttribute("male", userservice.findMale());
+		model.addAttribute("female", userservice.findAll().size() - userservice.findMale());
+		return "/dashboard";
+	}
+	
 	@RequestMapping("/user/userlist")
 	public String list(ModelMap model) {
 		model.addAttribute("user", userservice.findAll());
